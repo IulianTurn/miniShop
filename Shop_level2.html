@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.nritems{
+	background-color: white;
+	width: 100px;
+	margin: 0px;
+	text-align: left;
+	font-size: 16px;
+}
+
+div.shopingChart{
+	position:fixed;
+	top:0px;
+	right: 0px;
+	background-color: red;
+	width: 100px;
+	margin: 10px;
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid gray;
+
+}
+
+div.allChart{
+	position:fixed;
+	top:0px;
+	left: 0px;
+	background-color: red;
+	width: 100px;
+	margin: 10px;
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid gray;
+
+}
+
+#showAll{
+	position:fixed;
+	top:100px;
+	left: 10px;
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px dashed gray;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: navy;
+}
+
+.flex-container > div {
+  background-color: lightblue;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+}
+
+#showShop{
+display: none;
+}
+
+#showAll{
+display: none;
+width: 95%;
+
+}
+
+#divv{
+visibility: hidden;
+}
+
+h1{
+text-align:center;
+}
+</style>
+</head>
+<body>
+
+<h1>Buy</h1>
+<div class="allChart" id="divv">Shoping Chart<br><div class="nritems" id="nritems1">&nbsp;Items:0</div><div class="nritems" id="showChart1"><button id="showShop">Back to shop</button></div></div>
+
+<div class="shopingChart" id="div0">Shoping Chart<br><div class="nritems" id="nritems">&nbsp;Items:0</div><div class="nritems" id="showChart"><button class="showchart" id="showchart">$ Show chart</button></div></div>
+
+	<div id="canvas" class="flex-container">
+		<div class="product" id="div1">Product 1<br><button id="item1">Add to chart</button></div>
+		<div class="product" id="div2">Product 2<br><button id="item2">Add to chart</button></div>
+		<div class="product" id="div3">Product 3<br><button id="item3">Add to chart</button></div>  
+		<div class="product" id="div4">Product 4<br><button id="item4">Add to chart</button></div>
+		<div class="product" id="div5">Product 5<br><button id="item5">Add to chart</button></div>
+		<div class="product" id="div6">Product 6<br><button id="item6">Add to chart</button></div>  
+		<div class="product" id="div7">Product 7<br><button id="item7">Add to chart</button></div>
+		<div class="product" id="div8">Product 8<br><button id="item8">Add to chart</button></div>
+		<div class="product" id="div9">Product 9<br><button id="item9">Add to chart</button></div>  
+		<div class="product" id="div10">Product 10<br><button id="item10">Add to chart</button></div>
+		<div class="product" id="div11">Product 11<br><button id="item11">Add to chart</button></div>
+		<div class="product" id="div12">Product 12<br><button id="item12">Add to chart</button></div>  
+	</div>
+	
+	
+	
+	<div id="showAll">
+	<p>Here came info</p>
+	</div>
+
+
+<script>
+const audio = new Audio("button_sound.mp3");
+const buttons = document.querySelectorAll(".product");//select class but reffer button the element with this class
+const nrItems=document.querySelector("#nritems");
+const nrItems1=document.querySelector("#nritems1");
+let i=0;
+buttons.forEach(button => {
+  button.addEventListener("click", (e) => {
+    audio.play();
+	i++;
+	nrItems.innerHTML = "&nbsp;Items: " + i;
+	nrItems1.innerHTML = "&nbsp;Items: " + i;	
+	e = e || window.event;
+    let target = e.target || e.srcElement;
+    //text = target.textContent || target.innerText;
+	///////////////////////////
+	//alert(e.target);  // to get the element
+    //alert(e.target.tagName);
+	//alert(e.target.innerText);
+	//alert(e.target.id);
+	let text = e.target.parentElement.innerText;
+	alert(text.substring(0, 9));
+  });
+});
+
+const buttonChart = document.querySelector("#showchart");
+const buttonBack = document.querySelector("#showShop");
+const divInfo = document.querySelector("#showAll");
+const myCanvas = document.getElementById("canvas");
+const div000 = document.querySelector("#div0");
+const div111 = document.querySelector("#divv");
+
+
+buttonChart.addEventListener("click", () => {
+myCanvas.style.visibility = "hidden";
+div000.style.visibility = "hidden";
+div111.style.visibility = "visible";
+buttonBack.style.display = "block";
+divInfo.style.display = "block";
+
+  });
+  
+buttonBack.addEventListener("click", () => {
+myCanvas.style.visibility = "visible";
+div000.style.visibility = "visible";
+div111.style.visibility = "hidden";
+buttonBack.style.display = "none";
+divInfo.style.display = "none";
+  });
+
+
+</script>
+</body>
+</html>
