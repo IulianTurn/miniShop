@@ -1,0 +1,82 @@
+ div.nritems {
+        background-color: white;
+        width: 100px;
+        margin: 0px;
+        text-align: left;
+        font-size: 16px;
+      }
+
+      div.shopingChart {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        background-color: lightblue;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: 10px navy;
+        border-radius: 10px;
+        overflow: hidden !important;
+        border-style: solid;
+      }
+
+      div.allChart {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: lightblue;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: 10px navy;
+        border-radius: 10px;
+        overflow: hidden !important;
+        border-style: solid;
+      }
+
+      #showAll {
+        display: none;
+        width: 95%;
+        background-color: lightblue;
+        position: fixed;
+        top: 100px;
+        left: 10px;
+        padding: 3px;
+        border-radius: 5px;
+        border: 1px dashed gray;
+        border-radius: 15px;
+      }
+
+      .flex-container {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: navy;
+        border-radius: 15px;
+      }
+
+      .flex-container > div {
+        background-color: lightblue;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 20px;
+        border-radius: 15px;
+      }
+
+      #showShop {
+        display: none;
+      }
+
+      #divv {
+        visibility: hidden;
+      }
+
+      h1 {
+        color: navy;
+        text-align: center;
+      }
